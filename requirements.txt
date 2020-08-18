@@ -8,7 +8,3 @@ wcwidth==0.1.8
 webencodings==0.5.1
 whitenoise==5.2.0
 widgetsnbextension==2.0.0
-wikipedia==1.4.0
-xkit==0.0.0
-xlrd==1.2.0
-zipp==1.0.0
