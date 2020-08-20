@@ -25,7 +25,7 @@ SECRET_KEY = '9+0*jyb3rnmdc38gv0txjzx0_2#3)#kbekq-m18b3v-z41csfz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['imprexions-eye-clinic.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
