@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/eyelogofavicon.png">
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <!-- Main CSS -->
@@ -144,7 +144,7 @@
                                         -->
                                         </li>
                                         <li>
-                                            <a href="#">About</a>
+                                            <a href="{% url 'about-us' %}">About</a>
                                             <!--
                                             <ul class="dropdown-menu-col-1">
                                                 <li><a href="about1.html">About 1</a></li>
@@ -401,7 +401,7 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="#" class="action-items-primary-btn">Appointment<i class="fas fa-chevron-right"></i></a>
+                                        <a href="{% url 'appointments' %}" class="action-items-primary-btn">Appointment<i class="fas fa-chevron-right"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -412,6 +412,7 @@
         </header>
         <!-- Header Area End Here -->
         <!-- Slider Area Start Here -->
+        {% block appointment %}
         <div class="slider-area slider-layout1 bg-light-primary slider-top-margin">
             <div class="bend niceties preview-1">
                 <div id="ensign-nivoslider-1" class="slides">
@@ -473,13 +474,12 @@
                     <div class="about-box-layout1 order-xl-2 col-xl-5 col-12">
                         <div class="item-content">
                             <h2 class="item-title">Welcome To Imprexions eye care.</h2>
-                            <div class="sub-title">Hospital imply dummy text of the printing and type setng industry
-                                been
-                                the industry.
+                            <div class="sub-title">
                             </div>
-                            <p>Mtandard dummy texr since when an unknown printer took a galley.MediPoint Lorem ipsum
-                                dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam.'s standard dummy texr
-                                since when an unknown printer took a galley consetetur.</p>
+                            <p>Imprexions eye care is an eye care center geared at making eye care services affordable and
+                                 accessible. We provide comprehensive Eye examination, treatment of all eye diseases, dispensing
+                                  of prescription lenses, fitting of contact lenses, sale of quality lenses, sale of affordable designer
+                                  frames, and sale of ophthalmic equipment.</p>
                             <img src="/statc/img/about/sign1.png" alt="sign" class="img-fluid">
                         </div>
                     </div>
@@ -528,29 +528,47 @@
 
 
 
+
+
+
+
                         <div class="item-icon"><i class="flaticon-eye"></i></div>
-                        <h3 class="item-title"><a href="#">Eye Care</a></h3>
+                        <h3 class="item-title"><a href="#">COMPREHENSIVE EYE EXAMINATION</a></h3>
                         <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
                         <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                     <div class="departments-box-layout2">
                         <span class="departments-sl">02.</span>
                         <div class="item-icon"><i class="flaticon-pills"></i></div>
-                        <h3 class="item-title"><a href="#">Medicine</a></h3>
+                        <h3 class="item-title"><a href="#">TREATMENT OF EYE DISEASE</a></h3>
                         <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
                         <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                     <div class="departments-box-layout2">
                         <span class="departments-sl">03.</span>
                         <div class="item-icon"><i class="flaticon-eye"></i></div>
-                        <h3 class="item-title"><a href="#">Eye Care</a></h3>
+                        <h3 class="item-title"><a href="#">DISPENSING OF PRESCRIPTION LENSES</a></h3>
                         <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
                         <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
                     <div class="departments-box-layout2">
                         <span class="departments-sl">04.</span>
+                        <div class="item-icon"><i class="flaticon-optical"></i></div>
+                        <h3 class="item-title"><a href="#">SALE OF SPECTACLE FRAME</a></h3>
+                        <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
+                        <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                    <div class="departments-box-layout2">
+                        <span class="departments-sl">05.</span>
                         <div class="item-icon"><i class="flaticon-eye"></i></div>
-                        <h3 class="item-title"><a href="#">Eye Care</a></h3>
+                        <h3 class="item-title"><a href="#">FITTING OF CONTACT LENSES</a></h3>
+                        <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
+                        <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                    <div class="departments-box-layout2">
+                        <span class="departments-sl">06.</span>
+                        <div class="item-icon"><i class="flaticon-eye"></i></div>
+                        <h3 class="item-title"><a href="#">SALE OF OPHTHALMIC EQUIPMENT</a></h3>
                         <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
                         <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
                     </div>
@@ -594,11 +612,12 @@
                             <div class="row justify-content-end">
                                 <div class="col-lg-6 col-sm-12 col-12">
                                     <div class="item-content-inner inner-title-dark">
-                                        <h2 class="item-title">We are the trusted experts things simple</h2>
-                                        <p>Dwisi enim ad minim veniam, quis laore nostrud exerci tation area ulm hedi
-                                            corper turet suscipit lobortis nisl ut aliquip erat volutpat autem vel eum
-                                            iriure dolor in hendrerit in vulputate.
+                                        <h2 class="item-title">Company Mission: </h2>
+                                        <p>To make eye care services affordable and accessible to all.
+Company Vision:
+To become a household name in Ghana in the eye sector..
                                         </p>
+                                        <h4 class="item-title">We are the trusted experts things simple</h4>
                                         <div class="skill-layout1">
                                             <div class="progress">
                                                 <div class="lead">Efficency</div>
@@ -662,6 +681,7 @@
         </section>
         <!-- Call to Action End Here -->
         <!-- Footer Area Start Here -->
+        {% endblock appointment %}
         <footer>
             <section class="footer-top-wrap">
                 <div class="container">

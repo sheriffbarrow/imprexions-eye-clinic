@@ -11,5 +11,5 @@ def about(request):
     return render(request, 'eye/about2.html')
 
 
-def appointment(request):
+def appointmentt(request):
     return render(request, 'eye/appointment.html')
